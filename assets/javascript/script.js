@@ -14,9 +14,24 @@ giphy API key: 9OITCt8vj9Ey0OaPr8PoA9Qo3JAL9gxx
 
 $(document).ready(function(){ 
 
-    var topics = ["Rick Sanchez", "Randy Savage", "Mr T", "Farva", "Rick James", "Charlie Murphy", "Mike Tyson", "Andy Dwyer", "Fogell", "Keegan-Michael Key", "Jordan Peele", "Bill Burr",];
+    var topics = ["Rick Sanchez", "Randy Savage", "Mr T", "Farva", "Rick James", "Charlie Murphy", "Mike Tyson", "Andy Dwyer", "Fogell", "Keegan-Michael Key", "Jordan Peele", "Bill Burr"];
 
-    // create loop that appends a button for each string in the array
+    // create loop that appends a button for each string in the array   - DONE
+
+    function makeB() {                              // create the buttons
+        $(".buttonMe").empty();                     // makes sure there are no duplicates
+        for (var i = 0; i < topics.length; i++) {
+            var butHtml = $("<button>");            // create an HTML button
+            butHtml.addClass("greatMan");           // Add a div class called 'greatMan' to each button
+            butHtml.text(topics[i]);                // Push the string from the array to the button that was created for it
+          $(".buttonMe").append(butHtml);           // Add the buttons to the 'buttonMe' div
+        }
+      }
+
+    makeB();                                        // Call the function to make the buttons
+
+
+
 
     // on click event, display 10 static gifs
     // with ratings under each gif

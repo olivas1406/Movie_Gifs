@@ -2,14 +2,28 @@
     box-sizing: border-box;
 }
 
+.buttonMe {
+    border: solid 1px darkgray;
+    background: lightgray
+   
+}
+
+.gifMe {
+    border: solid 2px blue;
+    height: 600px;                /*   REMOVE ME  */
+}
 
 
+.inputMe {
+    border: solid 2px green;
+}
 
-
-
-
-
-
+button {
+    margin: 1% 0 1% 1%;
+    border-radius: 12px;
+    background: darkblue;
+    color: white;
+}
 
 
 
