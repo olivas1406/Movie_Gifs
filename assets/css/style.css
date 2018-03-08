@@ -9,18 +9,20 @@
 }
 
 button {
-    margin: 1% 0 1% 1%;
+    margin: 1% 0 1% 0%;
     border-radius: 12px;
     background: darkblue;
     color: white;
 }
 
+
+/*
 .gifMe {
     border: solid 2px red;
 }
-
+*/
 .inputMe {
-    border: solid 2px green;
+    margin-top: 3%;
 }
 
 .gifMeUp {
@@ -28,6 +30,10 @@ button {
     margin: 1% 1% 1% 1%;
 }
 
+.clickMe {
+    background: darkblue;
+    color: white;
+}
 
 
 

@@ -1,9 +1,10 @@
 
+ var topics = ["Super Troopers", "Superbad", "Fear and Loathing in Las Vegas", "Conan the Barbarian", "The Hangover", "Zombieland", "Hot Fuzz", "Tropic Thunder", "Black Dynamite",];
 
 
 $(document).ready(function(){ 
 
-    var topics = ["Super Troopers", "Superbad", "Fear and Loathing in Las Vegas", "Conan the Barbarian", "The Hangover", "Zombieland", "Hot Fuzz", "Tropic Thunder", "Black Dynamite",];
+   // var topics = ["Super Troopers", "Superbad", "Fear and Loathing in Las Vegas", "Conan the Barbarian", "The Hangover", "Zombieland", "Hot Fuzz", "Tropic Thunder", "Black Dynamite",];
 
     function makeB() {                                                      // Create the buttons
         $(".buttonMe").empty();                                             // Makes sure there are no duplicates
@@ -21,7 +22,7 @@ $(document).ready(function(){
     $("button").on("click", function() {                                    // listen for click event
         $(".gifMe").empty();                                            // Clear the previous Gifs
         var whoIbe = $(this).attr("data-name");                           // Pull the name of the button from the data-name attribute
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + whoIbe +"&api_key=9OITCt8vj9Ey0OaPr8PoA9Qo3JAL9gxx&limit=10"; // giphy API URL
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + whoIbe +"&api_key=9OITCt8vj9Ey0OaPr8PoA9Qo3JAL9gxx&limit=10&rating=pg-13"; // giphy API URL
 
         $.ajax({                                                            // AJAX request
             url: queryURL,                                                  // Call the URL stored in queryURL
@@ -57,29 +58,18 @@ $(document).ready(function(){
                 })   
         });  
     });
-});
 
-
-    // on click event gif, gif plays, on click again gif pauses
-
-
-
-
-    /////// ^ get the above working before moving on to this ^///////////
 
     // Add a form to your page takes the value from a user input box and adds it into your topics array. 
     // Then make a function call that takes each topic in the array remakes the buttons on the page.
 
 
+  $("form").submit(function(){
+    event.preventDefault();
+    var newValue = $(".addMe").val();
+    topics.push(newValue);
+    });
 
 
-
-
-
-
-
-
-
-
-
+});
 
