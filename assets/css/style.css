@@ -8,16 +8,6 @@
    
 }
 
-.gifMe {
-    border: solid 2px blue;
-    height: 600px;                /*   REMOVE ME  */
-}
-
-
-.inputMe {
-    border: solid 2px green;
-}
-
 button {
     margin: 1% 0 1% 1%;
     border-radius: 12px;
@@ -25,8 +15,18 @@ button {
     color: white;
 }
 
+.gifMe {
+    border: solid 2px red;
+}
 
+.inputMe {
+    border: solid 2px green;
+}
 
+.aGreatMan {
+    float: left;
+    margin: 1% 1% 1% 1%;
+}
 
 
 
