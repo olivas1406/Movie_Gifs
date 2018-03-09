@@ -1,10 +1,25 @@
 
- var topics = ["Super Troopers", "Superbad", "Fear and Loathing in Las Vegas", "Conan the Barbarian", "The Hangover", "Zombieland", "Hot Fuzz", "Tropic Thunder", "Black Dynamite",];
+
+
+
+
+
+///////////////  CLICK EVENT NOT WORKING FOR DYNAMICALLY CREATED ELEMENTS ////////////////////////
+///////////////  CLICK EVENT NOT WORKING FOR DYNAMICALLY CREATED ELEMENTS ////////////////////////
+///////////////  CLICK EVENT NOT WORKING FOR DYNAMICALLY CREATED ELEMENTS ////////////////////////
+///////////////  CLICK EVENT NOT WORKING FOR DYNAMICALLY CREATED ELEMENTS ////////////////////////
+///////////////  CLICK EVENT NOT WORKING FOR DYNAMICALLY CREATED ELEMENTS ////////////////////////
+///////////////  CLICK EVENT NOT WORKING FOR DYNAMICALLY CREATED ELEMENTS ////////////////////////
+///////////////  CLICK EVENT NOT WORKING FOR DYNAMICALLY CREATED ELEMENTS ////////////////////////
+///////////////  CLICK EVENT NOT WORKING FOR DYNAMICALLY CREATED ELEMENTS ////////////////////////
+
+
+
 
 
 $(document).ready(function(){ 
 
-   // var topics = ["Super Troopers", "Superbad", "Fear and Loathing in Las Vegas", "Conan the Barbarian", "The Hangover", "Zombieland", "Hot Fuzz", "Tropic Thunder", "Black Dynamite",];
+   var topics = ["Super Troopers", "Superbad", "Fear and Loathing in Las Vegas", "Conan the Barbarian", "The Hangover", "Zombieland", "Hot Fuzz", "Tropic Thunder", "Black Dynamite",];
 
     function makeB() {                                                      // Create the buttons
         $(".buttonMe").empty();                                             // Makes sure there are no duplicates
@@ -19,7 +34,7 @@ $(document).ready(function(){
 
     makeB();                                                                // Call the function to make the buttons
 
-    $("button").on("click", function() {                                    // listen for click event
+    $(".gifMeUp").click(function() {                                    // listen for click event
         $(".gifMe").empty();                                            // Clear the previous Gifs
         var whoIbe = $(this).attr("data-name");                           // Pull the name of the button from the data-name attribute
         var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + whoIbe +"&api_key=9OITCt8vj9Ey0OaPr8PoA9Qo3JAL9gxx&limit=10&rating=pg-13"; // giphy API URL
@@ -55,7 +70,7 @@ $(document).ready(function(){
                             $(this).attr("src", $(this).attr("data-still"));
                             $(this).attr("data-state", "still");
                         }    
-                })   
+                })               
         });  
     });
 
@@ -64,12 +79,14 @@ $(document).ready(function(){
     // Then make a function call that takes each topic in the array remakes the buttons on the page.
 
 
-  $("form").submit(function(){
+    $("body").on("click", ".clickMe", function() {  
+
+  //$("form").submit(function(){
     event.preventDefault();
     var newValue = $(".addMe").val();
     topics.push(newValue);
+    makeB();
     });
 
 
 });
-
