@@ -1,9 +1,5 @@
 
 
-
-
-
-
 ///////////////  CLICK EVENT NOT WORKING FOR DYNAMICALLY CREATED ELEMENTS ////////////////////////
 ///////////////  CLICK EVENT NOT WORKING FOR DYNAMICALLY CREATED ELEMENTS ////////////////////////
 ///////////////  CLICK EVENT NOT WORKING FOR DYNAMICALLY CREATED ELEMENTS ////////////////////////
@@ -12,14 +8,12 @@
 ///////////////  CLICK EVENT NOT WORKING FOR DYNAMICALLY CREATED ELEMENTS ////////////////////////
 ///////////////  CLICK EVENT NOT WORKING FOR DYNAMICALLY CREATED ELEMENTS ////////////////////////
 ///////////////  CLICK EVENT NOT WORKING FOR DYNAMICALLY CREATED ELEMENTS ////////////////////////
-
-
 
 
 
 $(document).ready(function(){ 
 
-   var topics = ["Super Troopers", "Superbad", "Fear and Loathing in Las Vegas", "Conan the Barbarian", "The Hangover", "Zombieland", "Hot Fuzz", "Tropic Thunder", "Black Dynamite",];
+   var topics = ["Ice Pirates", "Coming to America", "Trading Places", "Super Troopers","Superbad", "Fear and Loathing in Las Vegas", "Conan the Barbarian", "The Hangover", "Zombieland", "Hot Fuzz", "Tropic Thunder", "Black Dynamite",];
 
     function makeB() {                                                      // Create the buttons
         $(".buttonMe").empty();                                             // Makes sure there are no duplicates
@@ -30,14 +24,14 @@ $(document).ready(function(){
             butHtml.attr("data-name", topics[i]);                           // Add a data attribute
           $(".buttonMe").append(butHtml);                                   // Add the buttons to the 'buttonMe' div
         }
-      }
+    }
 
     makeB();                                                                // Call the function to make the buttons
 
-    $(".gifMeUp").click(function() {                                    // listen for click event
+    function doTheWork() {
         $(".gifMe").empty();                                            // Clear the previous Gifs
         var whoIbe = $(this).attr("data-name");                           // Pull the name of the button from the data-name attribute
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + whoIbe +"&api_key=9OITCt8vj9Ey0OaPr8PoA9Qo3JAL9gxx&limit=10&rating=pg-13"; // giphy API URL
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + whoIbe +"&api_key=9OITCt8vj9Ey0OaPr8PoA9Qo3JAL9gxx&limit=10&rating=pg-13"; // giphy API URL
 
         $.ajax({                                                            // AJAX request
             url: queryURL,                                                  // Call the URL stored in queryURL
@@ -52,41 +46,40 @@ $(document).ready(function(){
                     var rating = results[j].rating;                                 // variable to hold the rating
                     var p = $("<p>").text("Rating: " + rating.toUpperCase());       // Push the rating to the HTML in Uppercase
                     var newImg = $("<img>");                                   // Create an IMG HTML element
-                    newImg.attr("src", results[j].images.fixed_height_still.url);    // Give the IMG a source from the results
-                    newImg.attr("data-still", results[j].images.fixed_height_still.url);
-                    newImg.attr("data-animate", results[j].images.fixed_height.url);
-                    newImg.attr("data-state", "still");
-                    newImg.addClass("gif");
+                    newImg.attr("src", results[j].images.fixed_height_still.url);    // Give a still image as the source
+                    newImg.attr("data-still", results[j].images.fixed_height_still.url);    // assign the still image to 'data-still'
+                    newImg.attr("data-animate", results[j].images.fixed_height.url);        // assign the moving image to date-animate'
+                    newImg.attr("data-state", "still");                                     // assign attr data-state 'still'
+                    newImg.addClass("gif");                                                 // Add div class 'gif' to the new images
                     gifDiv.prepend(p);                                              // Add the rating to the gif's div
                     gifDiv.prepend(newImg);                                    // Add the IMG element and source to the gif's div
                     $(".gifMe").prepend(gifDiv);                                    // Push to the HTML
                 }
-                $(".gif").on("click", function() {
+                $(".gif").on("click", function() {                                 // on event listener
+                    
                     var state = $(this).attr("data-state");
-                        if (state === "still") {
-                            $(this).attr("src", $(this).attr("data-animate"));
-                            $(this).attr("data-state", "animate");
-                        } else {
-                            $(this).attr("src", $(this).attr("data-still"));
-                            $(this).attr("data-state", "still");
+                        if (state === "still") {                                    // If attr data-state is 'still'
+                            $(this).attr("src", $(this).attr("data-animate"));      // change the image source to the moving image
+                            $(this).attr("data-state", "animate");                  // and set attr data-state to 'animate'
+                        } else {                                                    // Else (data-state is set to animate)
+                            $(this).attr("src", $(this).attr("data-still"));        // change the image source to the still image
+                            $(this).attr("data-state", "still");                    // and set attr data-state to 'still'
                         }    
+                        return false;
                 })               
         });  
-    });
+    };
 
+  $(document).on("click", ".gifMeUp" , doTheWork);
 
-    // Add a form to your page takes the value from a user input box and adds it into your topics array. 
-    // Then make a function call that takes each topic in the array remakes the buttons on the page.
-
-
-    $("body").on("click", ".clickMe", function() {  
-
-  //$("form").submit(function(){
-    event.preventDefault();
-    var newValue = $(".addMe").val();
-    topics.push(newValue);
-    makeB();
-    });
+    $("form").submit(function(){
+        event.preventDefault();
+        var newValue = $(".addMe").val();
+        topics.push(newValue);
+        makeB();
+        });
 
 
 });
+
+
