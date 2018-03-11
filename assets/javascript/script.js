@@ -47,25 +47,25 @@ $(document).ready(function(){
                 $(".gif").on("click", function() {                                          // On "gif" div click event
                     var state = $(this).attr("data-state");
                         if (state === "still") {                                            // If attr data-state is 'still'
-                            $(this).attr("src", $(this).attr("data-animate"));              // change the image source to the moving image
+                            $(this).attr("src", $(this).attr("data-animate"));              // Change the image source to the moving image
                             $(this).attr("data-state", "animate");                          // and set attr data-state to 'animate'
                         } else {                                                            // Else (data-state is set to animate)
-                            $(this).attr("src", $(this).attr("data-still"));                // change the image source to the still image
+                            $(this).attr("src", $(this).attr("data-still"));                // Change the image source to the still image
                             $(this).attr("data-state", "still");                            // and set attr data-state to 'still'
                         }    
-                        return false;                                                       //  Stop this click from bubbling up and sending a new AJAX request
+                        return false;                                                       // Stop this click from bubbling up and sending a new AJAX request
                     })               
         });  
     };
 
-    $(document).on("click", ".gifMeUp" , doTheWork);                                        // Click event for the buttons
-
+    $(document).on("click", ".gifMeUp" , doTheWork);                                        // Click event for the buttons, calls the 'doTheWork' function
+   
     $("form").submit(function(){                                                            // Click event for the form
         event.preventDefault();                                                             // Prevent default form action
         var newValue = $(".addMe").val().trim();                                            // Get the trimmed input
         topics.push(newValue);                                                              // Add the input to the 'topics' array
         makeB();                                                                            // Call the 'makeB' function to create a new button
-        this.reset();                                                                       // Clear the form
+        this.reset();                                                                       // Clear the form input
     });
 });
 
