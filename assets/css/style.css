@@ -32,7 +32,7 @@
     margin-bottom: -6%;
     padding-top: 2%;
     color: yellow;
-    text-shadow: 2px 1px black;
+    text-shadow: 1px 1px black;
 }
 
 .buttonMe {
@@ -46,8 +46,8 @@
 
 button {
     border-radius: 12px;
-    background: darkblue;
-    color: white;
+    background: white;
+    color: darkblue;
 }
 
 .gifMeUp {
@@ -56,7 +56,6 @@ button {
 }
 
 .clickMe {
-    
     margin: -2% 0 2% 0;
     background: darkblue;
     color: white;
@@ -65,4 +64,8 @@ button {
 input[type=text] {
     width: 100%;
     box-sizing: border-box;
+}
+
+p {
+    color: black;
 }

@@ -60,6 +60,14 @@ $(document).ready(function(){
 
     $(document).on("click", ".gifMeUp" , doTheWork);                                        // Click event for the buttons, calls the 'doTheWork' function
    
+    $(document).on("mouseenter", ".gifMeUp", function() {                                   // On mouse hover change the button text to red
+        $(this).css("color", "red");
+        });
+
+    $(document).on("mouseleave", ".gifMeUp", function() {                                   // Change the button text back to blue
+        $(this).css("color", "darkblue");
+    });
+
     $("form").submit(function(){                                                            // Click event for the form
         event.preventDefault();                                                             // Prevent default form action
         var newValue = $(".addMe").val().trim();                                            // Get the trimmed input
