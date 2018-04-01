@@ -1,5 +1,8 @@
-# giphyProject
+<h1 align="center">
+Movie Gifs
+</h1>
 
+***
 
 This is a dynamic webpage that will display 10 gifs and their ratings when a labelled button is pressed.  
 There will also be an input field
