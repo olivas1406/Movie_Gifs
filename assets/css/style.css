@@ -53,6 +53,7 @@ button {
 .gifMeUp {
     float: left; 
     margin: 1% 1% 1% 1%;
+    cursor: pointer;
 }
 
 .clickMe {
