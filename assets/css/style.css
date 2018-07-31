@@ -42,6 +42,7 @@
 
 .r1c1 {
     text-align: center;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
 }
 
 button {
@@ -52,6 +53,13 @@ button {
 }
 
 .gifMeUp {
+    margin: 1% auto 1% auto;
+    padding: 0 1% 0 1%;
+    cursor: pointer;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+}
+
+.gifMeUp2 {
     float: left; 
     margin: 1% 1% 1% 1%;
     cursor: pointer;
@@ -79,3 +87,4 @@ h5 {
     margin: 0 auto 2% auto;
     color: white;
 }
+

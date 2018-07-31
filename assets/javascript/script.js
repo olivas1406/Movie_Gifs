@@ -2,7 +2,7 @@
 
 $(document).ready(function(){ 
 
-    var topics = ["Avengers: Infinity War", "Incredibles 2", "Deadpool 2", "Ready Player One", "Ocean's 8", "Venom", "Pacific Rim Uprising", "Thor: Ragnarok"];
+    var topics = ["Avengers: Infinity War", "Incredibles 2", "Deadpool 2", "Ready Player One", "Ocean's 8", "Venom", "Pacific Rim Uprising", "Thor: Ragnarok", "Hotel Transylvania"];
 
     function makeB() {                                                                      // Create the buttons
         $(".buttonMe").empty();                                                             // Makes sure there are no duplicates
@@ -31,7 +31,7 @@ $(document).ready(function(){
 
             var results = response.data;                                                    // Create variable 'results' to hold resonse.data  
                 for (var  j= 0; j < results.length; j++) {                                  // For Loop through the 10 results
-                    var gifDiv = $("<div class='gifMeUp'>");                                // Create a div class called 'gifMeUp'
+                    var gifDiv = $("<div class='gifMeUp2'>");                               // Create a div class called 'gifMeUp2'
                     var rating = results[j].rating;                                         // Variable to hold the gif rating
                     var p = $("<p>").text("Gif Rating: " + rating.toUpperCase());               // Push the rating to the HTML in Uppercase
                     var newImg = $("<img>");                                                // Create an IMG HTML element
