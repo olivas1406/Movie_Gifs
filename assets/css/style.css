@@ -73,3 +73,9 @@ input[type=text] {
 p {
     color: black;
 }
+
+h5 {
+    text-align: center;
+    margin: 0 auto 2% auto;
+    color: white;
+}
