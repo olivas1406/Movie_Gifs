@@ -12,16 +12,17 @@ for entertaining children (or a child-like adult) for short periods
 of time.  To get started, simply click one of the predefined buttons at the top of the page or enter a term into the 
 input field to generate a new button.
 
+---
+[CLICK ME to see it in action](https://olivas1406.github.io/Movie_Gifs/)
+<br>
+---
+![Movie Gif Screen Cap](./giphy.png)
 
+This project was created and is maintained by Daniel Olivas
 
-This page was created and is maintained by Daniel Olivas, to get help: 
- 
-             
-  president@computersoluciones.us
-              
-
-  https://www.linkedin.com/in/daniel-olivas/
-              
+To get help:<br><br>
+me@danielolivas.net<br>
+http://danielolivas.net
               
 
 
