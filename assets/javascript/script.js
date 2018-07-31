@@ -33,7 +33,7 @@ $(document).ready(function(){
                 for (var  j= 0; j < results.length; j++) {                                  // For Loop through the 10 results
                     var gifDiv = $("<div class='gifMeUp'>");                                // Create a div class called 'gifMeUp'
                     var rating = results[j].rating;                                         // Variable to hold the gif rating
-                    var p = $("<p>").text("Rating: " + rating.toUpperCase());               // Push the rating to the HTML in Uppercase
+                    var p = $("<p>").text("Gif Rating: " + rating.toUpperCase());               // Push the rating to the HTML in Uppercase
                     var newImg = $("<img>");                                                // Create an IMG HTML element
                     newImg.attr("src", results[j].images.fixed_height_still.url);           // Give a still image as the source
                     newImg.attr("data-still", results[j].images.fixed_height_still.url);    // Assign the still image to 'data-still'

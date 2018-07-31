@@ -22,10 +22,11 @@
 
 .r2c2 {
     height: 17%;
-    border: solid 2px yellow;
+    border: solid 1px yellow;
     border-radius: 12px;
     background: lightgray;   
     margin-top: 1%;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
 }
 
 .addAmovie {
@@ -47,12 +48,14 @@ button {
     border-radius: 12px;
     background: white;
     color: darkblue;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
 }
 
 .gifMeUp {
     float: left; 
     margin: 1% 1% 1% 1%;
     cursor: pointer;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
 }
 
 .clickMe {
