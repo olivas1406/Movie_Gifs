@@ -16,7 +16,7 @@ input field to generate a new button.
 [CLICK ME to see it in action](https://olivas1406.github.io/Movie_Gifs/)
 <br>
 ---
-![Movie Gif Screen Cap](./giphy.png)
+![Movie Gif Screen Cap](./giph.png)
 
 This project was created and is maintained by Daniel Olivas
 
