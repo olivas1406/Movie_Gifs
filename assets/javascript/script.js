@@ -2,7 +2,7 @@
 
 $(document).ready(function(){ 
 
-    var topics = ["Idiocracy", "Coming to America", "Trading Places", "Super Troopers", "Prometheus", "Zombieland", "Hot Fuzz", "Tropic Thunder", "Shaun of the Dead", "Ghostbusters"];
+    var topics = ["Avengers: Infinity War", "Incredibles 2", "Deadpool 2", "Ready Player One", "Ocean's 8", "Venom", "Pacific Rim Uprising", "Thor: Ragnarok"];
 
     function makeB() {                                                                      // Create the buttons
         $(".buttonMe").empty();                                                             // Makes sure there are no duplicates
